@@ -6,7 +6,6 @@ import { MotionDiv } from '@/utils'
 import { PricingCard } from '@/components/PricingCard'
 import { PlanToggle } from '@/components/PlanToggle'
 import { Navbar } from '@/components/Navbar'
-import { ThreeScene } from '@/components/ThreeScene'
 import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react'
 import { plans } from '@/lib/plans'
 import { useTheme } from '@/context/ThemeContext'
@@ -48,9 +47,6 @@ export default function PricingPage() {
     <div className={`relative min-h-screen ${currentTheme.background} transition-colors duration-300`}>
       {/* Gradient Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-purple-900/10 pointer-events-none" />
-      
-      {/* Animated Particles Background */}
-      <ThreeScene />
       
       {/* Navigation */}
       <Navbar />
@@ -160,7 +156,7 @@ export default function PricingPage() {
                   </p>
                 </div>
                 <Link
-                  href="/contact-sales"
+                  href="/signup"
                   className="group relative overflow-hidden rounded-full px-6 py-3 text-base font-semibold bg-indigo-600 text-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-x-2">
@@ -245,7 +241,7 @@ export default function PricingPage() {
                   Start your free trial
                 </Link>
                 <Link
-                  href="/demo"
+                  href="/signup"
                   className="rounded-full bg-indigo-800/40 backdrop-blur-sm border border-indigo-400/30 px-8 py-4 text-base font-semibold text-white hover:bg-indigo-800/60 transition-colors"
                 >
                   Watch demo

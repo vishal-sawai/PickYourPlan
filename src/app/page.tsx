@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { ArrowRight, BarChart2, Lock, Users, Sparkles, CheckCircle } from 'lucide-react'
-import { ThreeScene } from '@/components/ThreeScene'
 import { useTheme } from '@/context/ThemeContext'
 import { themes } from '@/lib/theme'
 import { useState } from 'react'
@@ -61,9 +60,6 @@ export default function HomePage() {
       {/* Gradient Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-purple-900/10 pointer-events-none" />
       
-      {/* Animated Particles Background */}
-      <ThreeScene />
-
       {/* Navigation */}
       <Navbar />
 
@@ -265,7 +261,7 @@ export default function HomePage() {
                   <div key={index} className="w-full flex-shrink-0 px-4">
                     <div className={`mx-auto max-w-2xl rounded-2xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} p-8 shadow-lg`}>
                       <div className="flex items-center gap-x-6 mb-6">
-                        <Image src={`/profile/vishal.jpg`} alt={testimonial.name} className="h-16 w-16 rounded-full" width={64} height={64} />
+                        <Image src={`/profile/user.jpg`} alt={testimonial.name} className="h-16 w-16 rounded-full" width={64} height={64} />
                         <div>
                           <h3 className={`text-lg font-semibold ${currentTheme.text}`}>{testimonial.name}</h3>
                           <p className={`${currentTheme.subtext}`}>{testimonial.role}</p>
@@ -358,7 +354,7 @@ export default function HomePage() {
                   Start for free
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/signup"
                   className="rounded-full bg-indigo-800/40 backdrop-blur-sm border border-indigo-400/30 px-8 py-4 text-base font-semibold text-white hover:bg-indigo-800/60 transition-colors"
                 >
                   Contact sales
