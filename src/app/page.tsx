@@ -1,5 +1,4 @@
 'use client'
-
 import { useTheme } from '@/context/ThemeContext'
 import { themes } from '@/lib/theme'
 import { Navbar } from '@/components/Navbar'
@@ -7,6 +6,7 @@ import { HeroSection } from '@/components/home/HeroSection'
 import { FeaturesSection } from '@/components/home/FeaturesSection'
 import { Suspense } from 'react'
 import { MotionDiv } from '@/utils'
+import { Footer } from '@/components/footer'
 
 // Loading fallback components
 const HeroSectionFallback = () => (
@@ -34,7 +34,7 @@ export default function HomePage() {
     <div className={`relative min-h-screen ${currentTheme.background} transition-colors duration-300`}>
       {/* Gradient Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-purple-900/10 pointer-events-none" />
-      
+
       {/* Navigation */}
       <Navbar />
 
@@ -79,6 +79,16 @@ export default function HomePage() {
               </form>
             </div>
           </div>
+        </MotionDiv>
+        {/* Footer */}
+        <MotionDiv
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+
+        >
+          <Footer />
         </MotionDiv>
       </main>
     </div>

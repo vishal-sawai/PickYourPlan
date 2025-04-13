@@ -10,7 +10,7 @@ export function HeroSection() {
   const currentTheme = themes[theme]
 
   return (
-    <div className="relative px-6 pt-28 lg:px-8" id="hero">
+    <div className="relative px-6 pt-8 lg:px-8" id="hero">
       <div className="mx-auto max-w-7xl py-20 sm:py-32 lg:py-40 flex flex-col lg:flex-row items-center">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
