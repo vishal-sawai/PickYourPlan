@@ -47,10 +47,10 @@ export default function PricingPage() {
     <div className={`relative min-h-screen ${currentTheme.background} transition-colors duration-300`}>
       {/* Gradient Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-purple-900/10 pointer-events-none" />
-      
+
       {/* Navigation */}
       <Navbar />
-      
+
       <MotionDiv
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -68,7 +68,7 @@ export default function PricingPage() {
                 Special offer: 20% off annual plans
               </span>
             </MotionDiv>
-            
+
             <MotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export default function PricingPage() {
                 Simple pricing for everyone
               </h1>
             </MotionDiv>
-            
+
             <MotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export default function PricingPage() {
             className="mt-16 flex justify-center"
           >
             <PlanToggle
-              billingPeriod={billingPeriod}
+              period={billingPeriod}
               onChange={setBillingPeriod}
             />
           </MotionDiv>
@@ -109,21 +109,18 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className={`relative rounded-2xl backdrop-blur-md ${
-                  theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/90'
-                } border ${
-                  plan.isFeatured
-                    ? 'border-indigo-500' 
+                className={`relative rounded-2xl backdrop-blur-md ${theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/90'
+                  } border ${plan.isPopular
+                    ? 'border-indigo-500'
                     : theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
-                } overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300`}
+                  } overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300`}
               >
-                {plan.popular && (
+                {plan.isPopular && (
                   <div className="absolute top-0 left-0 right-0 bg-indigo-600 text-white text-center text-sm font-medium py-1">
                     Most Popular
                   </div>
                 )}
                 <PricingCard
-                  description={''} 
                   {...plan}
                   billingPeriod={billingPeriod}
                   onSelect={() => handlePlanSelect(plan.id)}
@@ -135,7 +132,7 @@ export default function PricingPage() {
               </MotionDiv>
             ))}
           </div>
-          
+
           {/* Enterprise CTA Section */}
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -168,7 +165,7 @@ export default function PricingPage() {
               </div>
             </div>
           </MotionDiv>
-          
+
           {/* FAQ Section */}
           <MotionDiv
             initial={{ opacity: 0 }}
@@ -180,7 +177,7 @@ export default function PricingPage() {
               <h2 className={`text-3xl font-bold ${currentTheme.text} text-center mb-12`}>
                 Frequently asked questions
               </h2>
-              
+
               <div className="grid gap-6 md:grid-cols-2">
                 {frequentlyAskedQuestions.map((faq, index) => (
                   <MotionDiv
@@ -201,7 +198,7 @@ export default function PricingPage() {
               </div>
             </div>
           </MotionDiv>
-          
+
           {/* Guarantee Section */}
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -218,7 +215,7 @@ export default function PricingPage() {
           </MotionDiv>
         </div>
       </MotionDiv>
-      
+
       {/* CTA Section */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 mb-12">
         <div
@@ -251,7 +248,7 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-      
+
 
     </div>
   )

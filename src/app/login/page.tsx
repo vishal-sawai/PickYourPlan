@@ -52,13 +52,13 @@ export default function LoginPage() {
           <div className="text-center mb-8">
             <h2 className={`text-3xl font-bold ${currentTheme.text}`}>Sign in to your account</h2>
             <p className={`mt-6 text-sm ${currentTheme.subtext}`}>
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <a href="/signup" className="font-medium text-indigo-500 hover:text-indigo-400">
                 Sign up
               </a>
             </p>
           </div>
-          
+
           <LoginForm />
         </div>
       </div>

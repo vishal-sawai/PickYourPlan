@@ -1,33 +1,35 @@
-# PickYourPlan - Subscription Management Platform
+# StackSuck
 
-A modern subscription management platform built with Next.js, featuring a beautiful UI and seamless user experience. The platform helps teams manage their subscriptions efficiently with features like team management, advanced analytics, and enterprise-grade security.
+A modern subscription management SaaS application built with Next.js, Tailwind CSS, and Framer Motion.
 
 ## Features
 
-- 🎨 Beautiful, responsive UI with dark/light mode support
-- 🔒 Secure authentication system
-- 💳 Flexible pricing plans with monthly/yearly billing
-- 📊 Advanced analytics dashboard
-- 👥 Team management capabilities
-- 🔐 Enterprise-grade security features
-
-## Recent Changes
-
-- Removed animated particles background (`ThreeScene` component) from home and pricing pages for improved performance
-- Enhanced UI consistency across pages
-- Optimized page load times
+- 🎨 Modern and responsive design
+- 🌙 Dark/Light mode support
+- 🔐 Authentication with email and social providers
+- 💳 Subscription management
+- 📊 Dashboard analytics
+- 👥 Team collaboration tools
+- 📱 Mobile-first approach
+- ⚡ Optimized performance
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org) - React framework
-- [Tailwind CSS](https://tailwindcss.com) - Styling
-- [Framer Motion](https://www.framer.com/motion/) - Animations
-- [Lucide Icons](https://lucide.dev) - Icons
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide Icons
+- **UI Components:** Custom components with Tailwind
+- **Authentication:** Custom auth with Next.js middleware
+- **State Management:** React Context
+- **Form Handling:** React Hook Form (upcoming)
+- **Deployment:** Vercel
 
 ## Getting Started
 
-First, install the dependencies:
+1. Clone the repository:
 
+2. Install dependencies:
 ```bash
 npm install
 # or
@@ -36,8 +38,12 @@ yarn install
 pnpm install
 ```
 
-Then, run the development server:
+3. Create a `.env.local` file:
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
+4. Start the development server:
 ```bash
 npm run dev
 # or
@@ -46,38 +52,57 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Environment Variables
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-# Add your environment variables here
-```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
-src/
-├── app/             # Next.js app directory
-├── components/      # Reusable components
-├── context/        # React context providers
-├── lib/            # Utility functions and constants
-├── types/          # TypeScript type definitions
-└── utils/          # Helper functions
+PickYourPlan/
+├── src/
+│   ├── app/                   # Next.js App Router pages
+│   ├── components/            # Reusable components
+│   ├── context/              # React Context providers
+│   ├── hooks/                # Custom React hooks
+│   ├── lib/                  # Utility functions and configs
+│   └── utils/               # Helper functions
+├── public/                   # Static assets
+├── styles/                   # Global styles
+└── tailwind.config.js       # Tailwind configuration
 ```
 
-## Learn More
+## Key Components
 
-To learn more about the technologies used in this project:
+- `Navbar`: Main navigation with responsive mobile menu
+- `Footer`: Site-wide footer with dynamic content
+- `LoginForm`: Authentication form with social login
+- `PricingCard`: Subscription plan display
+- `Dashboard`: Admin dashboard layout
+- `ThemeProvider`: Dark/Light mode management
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Framer Motion Documentation](https://www.framer.com/motion/)
+## Available Scripts
 
-## Deployment
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+- `npm run format`: Format code with Prettier
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
+## Contributing
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Next.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
+- Framer Motion for smooth animations
+- Lucide Icons for beautiful icons
+
