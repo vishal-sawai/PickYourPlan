@@ -6,10 +6,8 @@ A modern subscription management SaaS application built with Next.js, Tailwind C
 
 - 🎨 Modern and responsive design
 - 🌙 Dark/Light mode support
-- 🔐 Authentication with email and social providers
 - 💳 Subscription management
 - 📊 Dashboard analytics
-- 👥 Team collaboration tools
 - 📱 Mobile-first approach
 - ⚡ Optimized performance
 
@@ -20,7 +18,6 @@ A modern subscription management SaaS application built with Next.js, Tailwind C
 - **Animations:** Framer Motion
 - **Icons:** Lucide Icons
 - **UI Components:** Custom components with Tailwind
-- **Authentication:** Custom auth with Next.js middleware
 - **State Management:** React Context
 - **Form Handling:** React Hook Form (upcoming)
 - **Deployment:** Vercel
