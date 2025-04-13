@@ -38,7 +38,7 @@ export function SignupStepper() {
     if (currentStep === 'complete') {
       const timeoutId = setTimeout(() => {
         router.push('/dashboard')
-      }, 2000) // 2 seconds delay before redirect
+      }, 1000) // 2 seconds delay before redirect
 
       // Cleanup timeout if component unmounts
       return () => clearTimeout(timeoutId)
