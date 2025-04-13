@@ -22,7 +22,7 @@ export function Navbar() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={toggleTheme}
-          className={`p-2 rounded-full ${currentTheme.card} border ${currentTheme.border} hover:border-indigo-500 transition-colors`}
+          className={`cursor-pointer p-2 rounded-full ${currentTheme.card} border ${currentTheme.border} hover:border-indigo-500 transition-colors`}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           {theme === 'dark' ? '🌞' : '🌙'}

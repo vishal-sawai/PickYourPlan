@@ -81,7 +81,7 @@ export function PricingCard({
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={onSelect}
-          className={`w-full rounded-full px-4 py-3 text-base font-semibold ${
+          className={`w-full rounded-full px-4 py-3 text-base font-semibold cursor-pointer ${
             popular
               ? 'bg-indigo-600 text-white hover:bg-indigo-500'
               : `${theme === 'dark' ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`
