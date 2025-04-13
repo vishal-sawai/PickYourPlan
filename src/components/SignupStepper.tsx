@@ -33,19 +33,17 @@ export function SignupStepper() {
     { id: 'complete', title: 'Complete' }
   ]
 
-
   useEffect(() => {
     // Redirect to the first step if the user tries to access this page directly
     if (currentStep === 'complete') {
       const timeoutId = setTimeout(() => {
         router.push('/dashboard')
-      }, 2000) // 3 seconds delay before redirect
+      }, 2000) // 2 seconds delay before redirect
 
       // Cleanup timeout if component unmounts
       return () => clearTimeout(timeoutId)
     }
   }, [currentStep, router])
-
 
   const handleNext = () => {
     const currentIndex = steps.findIndex(step => step.id === currentStep)
@@ -89,7 +87,7 @@ export function SignupStepper() {
                 <div
                   key={plan.id}
                   onClick={() => setSelectedPlan(plan)}
-                  className={`cursor-pointer rounded-xl p-6 ${selectedPlan?.id === plan.id
+                  className={`cursor-pointer rounded-xl p-4 sm:p-6 ${selectedPlan?.id === plan.id
                     ? 'ring-2 ring-indigo-500 border-transparent'
                     : `border ${currentTheme.border}`
                     } ${currentTheme.card}`}
@@ -104,7 +102,7 @@ export function SignupStepper() {
                     )}
                   </div>
                   <div className="mt-4">
-                    <span className={`text-2xl font-bold ${currentTheme.text}`}>
+                    <span className={`text-xl sm:text-2xl font-bold ${currentTheme.text}`}>
                       ${plan.price[billingPeriod]}
                     </span>
                     <span className={`${currentTheme.subtext}`}>
@@ -114,7 +112,7 @@ export function SignupStepper() {
                   <ul className="mt-4 space-y-2">
                     {plan.features?.map((feature, index) => (
                       <li key={index} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mr-2" />
                         <span className={`text-sm ${currentTheme.subtext}`}>{feature}</span>
                       </li>
                     ))}
@@ -261,14 +259,14 @@ export function SignupStepper() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto px-4 sm:px-6">
       {/* Progress Steps */}
-      <div className="mb-8">
-        <div className="flex items-center justify-center space-x-4">
+      <div className="mb-6 sm:mb-8 overflow-x-auto pb-4">
+        <div className="flex items-center justify-center min-w-max">
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center">
               <div
-                className={`flex items-center justify-center w-8 h-8 rounded-full ${currentStep === step.id
+                className={`flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full text-xs sm:text-sm ${currentStep === step.id
                   ? 'bg-indigo-600 text-white'
                   : steps.findIndex(s => s.id === currentStep) > index
                     ? 'bg-green-500 text-white'
@@ -276,19 +274,31 @@ export function SignupStepper() {
                   }`}
               >
                 {steps.findIndex(s => s.id === currentStep) > index ? (
-                  <CheckCircle className="h-5 w-5" />
+                  <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5" />
                 ) : (
                   index + 1
                 )}
               </div>
               {index < steps.length - 1 && (
                 <div
-                  className={`w-20 h-1 mx-2 ${steps.findIndex(s => s.id === currentStep) > index
+                  className={`w-10 sm:w-20 h-1 mx-1 sm:mx-2 ${steps.findIndex(s => s.id === currentStep) > index
                     ? 'bg-green-500'
                     : currentTheme.border
                     }`}
                 />
               )}
+            </div>
+          ))}
+        </div>
+
+        {/* Optional: Step Titles for larger screens */}
+        <div className="hidden sm:flex items-center justify-center space-x-16 mt-2">
+          {steps.map((step) => (
+            <div key={`title-${step.id}`} className="text-center">
+              <span className={`text-xs ${currentStep === step.id ? 'font-medium ' + currentTheme.text : currentTheme.subtext
+                }`}>
+                {step.title}
+              </span>
             </div>
           ))}
         </div>
@@ -300,32 +310,32 @@ export function SignupStepper() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -20 }}
-        className="mb-8"
+        className="mb-6 sm:mb-8"
       >
         {renderStepContent()}
       </MotionDiv>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between mt-8">
+      <div className="flex justify-between mt-6 sm:mt-8">
         {currentStep !== 'plan' && (
           <button
             onClick={handleBack}
-            className={`flex items-center px-6 py-2 rounded-lg ${currentTheme.border} ${currentTheme.text}`}
+            className={`flex items-center px-4 sm:px-6 py-2 rounded-lg ${currentTheme.border} ${currentTheme.text} text-sm sm:text-base`}
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
+            <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
             Back
           </button>
         )}
         {currentStep !== 'complete' && (
           <button
             onClick={handleNext}
-            className="flex items-center px-6 py-2 rounded-lg bg-indigo-600 text-white ml-auto"
+            className="flex items-center px-4 sm:px-6 py-2 rounded-lg bg-indigo-600 text-white ml-auto text-sm sm:text-base"
           >
             {currentStep === 'team' ? 'Complete Setup' : 'Next'}
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2" />
           </button>
         )}
       </div>
     </div>
   )
-} 
+}

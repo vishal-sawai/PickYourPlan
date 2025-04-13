@@ -44,15 +44,15 @@ export function HeroSection() {
               </svg>
             </span>
           </h1>
-          
+
           <p className={`mt-6 text-lg leading-8 ${currentTheme.subtext} max-w-2xl`}>
             Streamline your subscription management with PickYourPlan. The most powerful
             platform for managing team subscriptions, analytics, and security in one place.
           </p>
-          
+
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
             <Link
-              href="/pricing"
+              href="/signup"
               className="group relative overflow-hidden rounded-full w-full sm:w-auto px-8 py-4 text-base font-semibold bg-indigo-600 text-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
             >
               <span className="relative z-10 flex items-center justify-center gap-x-2">
@@ -61,23 +61,23 @@ export function HeroSection() {
               </span>
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
-            
+
             <Link
               href="/pricing"
               className={`group w-full sm:w-auto relative overflow-hidden rounded-full border border-indigo-300 dark:border-indigo-800 px-8 py-4 text-base font-semibold ${currentTheme.text} transition-all duration-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/30`}
             >
-              Watch Demo
+              see pricing plans
             </Link>
           </div>
-          
+
           <div className="mt-10 flex items-center justify-center lg:justify-start">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="w-8 h-8 rounded-full ring-2 ring-white dark:ring-gray-900 bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center overflow-hidden">
-                  <Image 
-                    src={`/profile/user.webp`} 
-                    alt={`User ${i}`} 
-                    width={32} 
+                  <Image
+                    src={`/profile/user.webp`}
+                    alt={`User ${i}`}
+                    width={32}
                     height={32}
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -91,8 +91,8 @@ export function HeroSection() {
             </div>
           </div>
         </MotionDiv>
-        
-        <MotionDiv 
+
+        <MotionDiv
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -108,10 +108,10 @@ export function HeroSection() {
               <div className={`mx-auto text-xs ${currentTheme.subtext}`}>Dashboard Preview</div>
             </div>
             <div className="p-4">
-              <Image 
-                src="/dashboard.webp" 
-                alt="Dashboard" 
-                width={600} 
+              <Image
+                src="/dashboard.webp"
+                alt="Dashboard"
+                width={600}
                 height={400}
                 className="rounded-lg w-full"
                 priority={true}
