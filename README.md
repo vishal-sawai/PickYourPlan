@@ -1,4 +1,4 @@
-# StackSuck
+# PickYourPlan
 
 A modern subscription management SaaS application built with Next.js, Tailwind CSS, and Framer Motion.
 
