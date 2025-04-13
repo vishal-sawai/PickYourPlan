@@ -28,7 +28,7 @@ export default function PricingPage() {
   const frequentlyAskedQuestions = [
     {
       question: 'How does the 14-day trial work?',
-      answer: 'You can try any plan for 14 days without being charged. If you decide to keep using StackSuck, you\'ll be billed at the end of your trial. You can cancel anytime during your trial period.'
+      answer: 'You can try any plan for 14 days without being charged. If you decide to keep using PickYourPlan, you\'ll be billed at the end of your trial. You can cancel anytime during your trial period.'
     },
     {
       question: 'Can I change plans later?',

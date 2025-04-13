@@ -8,6 +8,9 @@ type MotionPProps = MotionProps & React.HTMLAttributes<HTMLParagraphElement>
 type MotionAProps = MotionProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
 type MotionButtonProps = MotionProps & React.ButtonHTMLAttributes<HTMLButtonElement>
 type MotionFormProps = MotionProps & React.FormHTMLAttributes<HTMLFormElement>
+type MotionSectionProps = MotionProps & React.HTMLAttributes<HTMLDivElement>
+type MotionLiProps = MotionProps & React.HTMLAttributes<HTMLLIElement>
+type MotionFooterProps = MotionProps & React.HTMLAttributes<HTMLDivElement>
 
 // Export typed motion components
 export const MotionDiv = motion.div as React.FC<MotionDivProps>
@@ -17,3 +20,7 @@ export const MotionP = motion.p as React.FC<MotionPProps>
 export const MotionA = motion.a as React.FC<MotionAProps>
 export const MotionButton = motion.button as React.FC<MotionButtonProps>
 export const MotionForm = motion.form as React.FC<MotionFormProps>
+export const MotionSection = motion.section as React.FC<MotionSectionProps>
+export const MotionLi = motion.li as React.FC<MotionLiProps>
+export const MotionFooter = motion.footer as React.FC<MotionFooterProps>
+

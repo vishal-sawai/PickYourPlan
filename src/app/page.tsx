@@ -34,7 +34,7 @@ const testimonials = [
   {
     name: 'Sarah Johnson',
     role: 'CTO, TechCorp',
-    content: 'StackSuck has transformed how we manage our team subscriptions. The analytics are incredible!',
+    content: 'PickYourPlan has transformed how we manage our team subscriptions. The analytics are incredible!',
     avatar: '1'
   },
   {
@@ -104,7 +104,7 @@ export default function HomePage() {
             </h1>
             
             <p className={`mt-6 text-lg leading-8 ${currentTheme.subtext} max-w-2xl`}>
-              Streamline your subscription management with StackSuck. The most powerful
+              Streamline your subscription management with PickYourPlan. The most powerful
               platform for managing team subscriptions, analytics, and security in one place.
             </p>
             
@@ -306,7 +306,7 @@ export default function HomePage() {
               Trusted by leading companies
             </h2>
             <p className={`${currentTheme.subtext} max-w-2xl mx-auto`}>
-              Join thousands of teams that trust StackSuck for their subscription management.
+              Join thousands of teams that trust PickYourPlan for their subscription management.
             </p>
           </div>
           
@@ -376,7 +376,7 @@ export default function HomePage() {
             <div className="mb-8 md:mb-0">
               <div className="flex items-center space-x-2">
                 <Sparkles className="h-6 w-6 text-indigo-500" />
-                <span className={`font-bold text-xl ${currentTheme.text}`}>StackSuck</span>
+                <span className={`font-bold text-xl ${currentTheme.text}`}>PickYourPlan</span>
               </div>
               <p className={`mt-2 max-w-xs ${currentTheme.subtext}`}>
                 Simplifying subscription management for teams worldwide.
@@ -423,7 +423,7 @@ export default function HomePage() {
           
           <div className={`mt-12 pt-8 border-t ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'} flex flex-col md:flex-row items-center justify-between`}>
             <p className={`text-sm ${currentTheme.subtext}`}>
-              &copy; 2025 StackSuck, Inc. All rights reserved.
+              &copy; 2025 PickYourPlan, Inc. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Settings'].map((item) => (

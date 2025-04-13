@@ -14,19 +14,7 @@ export function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 ${currentTheme.background} backdrop-blur-md py-4 px-6 flex items-center justify-between border-b ${currentTheme.border}`}>
       <div className="flex items-center space-x-2">
         <Sparkles className="h-6 w-6 text-indigo-500" />
-        <span className={`font-bold text-xl ${currentTheme.text}`}>StackSuck</span>
-      </div>
-      
-      <div className="hidden md:flex items-center space-x-8">
-        {['Features', 'Pricing', 'Testimonials', 'Contact'].map((item) => (
-          <a 
-            key={item} 
-            href={`#${item.toLowerCase()}`}
-            className={`${currentTheme.subtext} hover:text-indigo-500 transition-colors`}
-          >
-            {item}
-          </a>
-        ))}
+        <Link href="/" className={`font-bold text-xl ${currentTheme.text}`}>PickYourPlan</Link>
       </div>
       
       <div className="flex items-center space-x-4">
@@ -48,7 +36,7 @@ export function Navbar() {
         </Link>
         
         <Link
-          href="/signup"
+          href="/pricing"
           className={`hidden md:block relative overflow-hidden rounded-full px-5 py-2 text-sm font-semibold text-white ${currentTheme.primary} transition-all duration-300`}
         >
           Get Started
