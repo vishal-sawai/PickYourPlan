@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTheme } from '@/context/ThemeContext'
 import { themes } from '@/lib/theme'
 import { MotionDiv } from '@/utils'
@@ -6,10 +6,12 @@ import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react'
 import { plans } from '@/lib/plans'
 import type { BillingPeriod, Plan } from '@/types'
 import { PlanToggle } from './PlanToggle'
+import { useRouter } from 'next/navigation'
 
 type Step = 'plan' | 'account' | 'team' | 'complete'
 
 export function SignupStepper() {
+  const router = useRouter()
   const { theme } = useTheme()
   const currentTheme = themes[theme]
   const [currentStep, setCurrentStep] = useState<Step>('plan')
@@ -30,6 +32,20 @@ export function SignupStepper() {
     { id: 'team', title: 'Team Setup' },
     { id: 'complete', title: 'Complete' }
   ]
+
+
+  useEffect(() => {
+    // Redirect to the first step if the user tries to access this page directly
+    if (currentStep === 'complete') {
+      const timeoutId = setTimeout(() => {
+        router.push('/dashboard')
+      }, 2000) // 3 seconds delay before redirect
+
+      // Cleanup timeout if component unmounts
+      return () => clearTimeout(timeoutId)
+    }
+  }, [currentStep, router])
+
 
   const handleNext = () => {
     const currentIndex = steps.findIndex(step => step.id === currentStep)
@@ -73,11 +89,10 @@ export function SignupStepper() {
                 <div
                   key={plan.id}
                   onClick={() => setSelectedPlan(plan)}
-                  className={`cursor-pointer rounded-xl p-6 ${
-                    selectedPlan?.id === plan.id
-                      ? 'ring-2 ring-indigo-500 border-transparent'
-                      : `border ${currentTheme.border}`
-                  } ${currentTheme.card}`}
+                  className={`cursor-pointer rounded-xl p-6 ${selectedPlan?.id === plan.id
+                    ? 'ring-2 ring-indigo-500 border-transparent'
+                    : `border ${currentTheme.border}`
+                    } ${currentTheme.card}`}
                 >
                   <div className="flex justify-between items-start">
                     <div>
@@ -253,13 +268,12 @@ export function SignupStepper() {
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center">
               <div
-                className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                  currentStep === step.id
-                    ? 'bg-indigo-600 text-white'
-                    : steps.findIndex(s => s.id === currentStep) > index
+                className={`flex items-center justify-center w-8 h-8 rounded-full ${currentStep === step.id
+                  ? 'bg-indigo-600 text-white'
+                  : steps.findIndex(s => s.id === currentStep) > index
                     ? 'bg-green-500 text-white'
                     : `${currentTheme.border} ${currentTheme.text}`
-                }`}
+                  }`}
               >
                 {steps.findIndex(s => s.id === currentStep) > index ? (
                   <CheckCircle className="h-5 w-5" />
@@ -269,11 +283,10 @@ export function SignupStepper() {
               </div>
               {index < steps.length - 1 && (
                 <div
-                  className={`w-20 h-1 mx-2 ${
-                    steps.findIndex(s => s.id === currentStep) > index
-                      ? 'bg-green-500'
-                      : currentTheme.border
-                  }`}
+                  className={`w-20 h-1 mx-2 ${steps.findIndex(s => s.id === currentStep) > index
+                    ? 'bg-green-500'
+                    : currentTheme.border
+                    }`}
                 />
               )}
             </div>
